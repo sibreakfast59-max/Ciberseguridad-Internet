@@ -1,0 +1,135 @@
+/* Estilos generales de juegos */
+section { margin: 40px 0; padding: 20px; border: 1px solid #1f2937; border-radius: 12px; background: var(--panel); }
+
+/* Drag & Drop */
+.drag-container { display: flex; gap: 20px; margin-top: 20px; }
+.items { display: flex; flex-direction: column; gap: 10px; }
+.draggable { padding: 10px; background: var(--accent); color: #111; border-radius: 8px; cursor: grab; }
+.dropzone { flex: 1; min-height: 120px; border: 2px dashed var(--primary); border-radius: 8px; padding: 10px; text-align: center; }
+
+/* Ahorcado */
+#ahorcado { text-align: center; }
+#word { font-size: 1.5rem; letter-spacing: 6px; }
+#hangman-status { margin-top: 10px; font-weight: bold; }
+
+/* Escape Room */
+#escape { text-align: center; }
+#scenario { margin-bottom: 10px; font-weight: bold; }
+#options button { margin: 5px; padding: 8px 12px; border-radius: 8px; background: var(--primary); color: #fff; cursor: pointer; }
+
+/* Rompecódigos */
+#password { text-align: center; }
+#pwd { padding: 10px; border-radius: 8px; border: 1px solid #ccc; }
+#pwd-strength { margin-top: 10px; font-weight: bold; }
+
+/* ===== AHORCADO CON CSS ===== */
+.hangman {
+  position: relative;
+  width: 180px;
+  height: 240px;
+  margin: 20px auto;
+}
+
+/* Horca */
+.gallows {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 10px;
+  height: 220px;
+  background: var(--primary);
+}
+
+.gallows::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 10px;
+  background: var(--primary);
+}
+
+.gallows::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 110px;
+  width: 4px;
+  height: 30px;
+  background: var(--primary);
+}
+
+/* Muñeco */
+.man {
+  position: absolute;
+  top: 40px;
+  left: 110px;
+}
+
+.man div {
+  display: none;
+  position: absolute;
+  background: var(--primary);
+}
+
+/* Cabeza */
+.head {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  background: transparent !important;
+  top: 0;
+  left: -14px;
+}
+
+/* Cuerpo */
+.body {
+  width: 4px;
+  height: 45px;
+  top: 35px;
+  left: 0;
+}
+
+/* Brazos */
+.left-arm, .right-arm {
+  width: 35px;
+  height: 4px;
+  top: 45px;
+}
+
+.left-arm {
+  transform: rotate(-30deg);
+  left: -35px;
+}
+
+.right-arm {
+  transform: rotate(30deg);
+  left: 4px;
+}
+
+/* Piernas */
+.left-leg, .right-leg {
+  width: 35px;
+  height: 4px;
+  top: 80px;
+}
+
+.left-leg {
+  transform: rotate(30deg);
+  left: -35px;
+}
+
+.right-leg {
+  transform: rotate(-30deg);
+  left: 4px;
+}
+
+/* Mostrar partes progresivamente */
+.show-head .head { display: block; }
+.show-body .body { display: block; }
+.show-left-arm .left-arm { display: block; }
+.show-right-arm .right-arm { display: block; }
+.show-left-leg .left-leg { display: block; }
+.show-right-leg .right-leg { display: block; }

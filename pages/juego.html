@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciberseguridad - Juegos | UEF Dolores Sucre</title>
+  <link rel="icon" type="image/png" href="../images/image.png"/>
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <link rel="stylesheet" href="../css/juegos.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="../home.html" class="brand">
+      <img src="../images/image.png" alt="UEF Dolores Sucre" class="logo" />
+      <span>Ciberseguridad Internet</span>
+    </a>
+    <nav class="menu">
+      <a href="../home.html">Inicio</a>
+      <a href="./conceptos.html">Conceptos</a>
+      <a href="./navegacion.html">Navegación Segura</a>
+      <a href="./glosario.html">Glosario</a>
+      <a href="./recursos.html">Recursos</a>
+      <a href="./juego.html" class="active">Juego</a>
+    </nav>
+  </header>
+
+  <section class="banner juegos">
+    <div class="banner-text">
+      <h1>Zona de Juegos</h1>
+      <p>Aprende ciberseguridad jugando</p>
+    </div>
+  </section>
+
+  <main class="content">
+    <h2>Selecciona un juego</h2>
+
+    <!-- Drag & Drop -->
+    <section id="dragdrop">
+      <h3>Clasifica Seguridad vs Amenazas</h3>
+      <div class="drag-container">
+        <div class="items">
+          <div class="draggable" draggable="true">VPN</div>
+          <div class="draggable" draggable="true">Phishing</div>
+          <div class="draggable" draggable="true">Contraseña segura</div>
+          <div class="draggable" draggable="true">Virus</div>
+        </div>
+        <div class="dropzone" data-category="seguridad">Seguridad</div>
+        <div class="dropzone" data-category="amenaza">Amenazas</div>
+      </div>
+      <p id="drag-result"></p>
+      <button onclick="resetDragDrop()">Reiniciar</button>
+    </section>
+
+    <!-- Ahorcado -->
+    <section id="ahorcado">
+        <h3>Ahorcado Digital</h3>
+
+        <div class="hangman">
+            <div class="gallows"></div>
+
+            <div class="man">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="left-arm"></div>
+            <div class="right-arm"></div>
+            <div class="left-leg"></div>
+            <div class="right-leg"></div>
+            </div>
+        </div>
+
+        <p>Palabra: <span id="word"></span></p>
+        <p>Letras usadas: <span id="used"></span></p>
+        <input type="text" id="guess" maxlength="1" />
+        <button onclick="guessLetter()">Probar letra</button>
+        <button onclick="resetHangman()">Reiniciar</button>
+        <p id="hangman-status"></p>
+    </section>
+
+
+
+    <!-- Escape Room -->
+    <section id="escape">
+      <h3>Escape Room Digital</h3>
+      <div id="scenario"></div>
+      <div id="options"></div>
+      <p id="escape-result"></p>
+      <button onclick="resetEscape()">Reiniciar</button>
+    </section>
+
+    <!-- Rompecódigos -->
+    <section id="password">
+      <h3>Rompecódigos</h3>
+      <input type="text" id="pwd" placeholder="Escribe una contraseña"/>
+      <button onclick="checkPassword()">Evaluar</button>
+      <p id="pwd-strength"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>UEF Dolores Sucre • Proyecto de grado Informática • 2025–2026</small>
+  </footer>
+
+  <script src="../js/juegos.js"></script>
+</body>
+</html>

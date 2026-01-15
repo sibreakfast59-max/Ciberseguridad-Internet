@@ -1,0 +1,74 @@
+:root {
+  --bg: #0b1020;
+  --text: #e5e7eb;
+  --primary: #22d3ee;
+  --accent: #facc15;
+  --panel: #12172b;
+  --muted: #94a3b8;
+  --glow: rgba(34, 211, 238, 0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 10% 10%, #0b1020, #0f1733 60%, #0b1020 100%);
+  font-family: 'Orbitron', 'Poppins', system-ui, sans-serif;
+  color: var(--text);
+}
+
+.welcome .card {
+  width: min(600px, 90vw);
+  padding: 32px;
+  border-radius: 16px;
+  background: rgba(18, 23, 43, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  text-align: center;
+  animation: pop 600ms ease-out;
+  box-shadow: 0 0 30px var(--glow);
+}
+
+#saludo {
+  font-size: clamp(28px, 6vw, 48px);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 2.5s ease-in-out infinite;
+  font-weight: 700;
+}
+
+.sub {
+  margin-top: 8px;
+  opacity: 0.85;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.loader {
+  margin: 24px auto 0;
+  width: 72px;
+  height: 72px;
+  border: 6px solid rgba(34, 211, 238, 0.15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animaciones */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pop {
+  from { transform: scale(.96); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shine {
+  0%,100% { filter: drop-shadow(0 0 0px rgba(250,204,21,0.2)); }
+  50%     { filter: drop-shadow(0 0 10px rgba(34,211,238,0.5)); }
+}
