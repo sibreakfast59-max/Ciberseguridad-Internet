@@ -251,3 +251,21 @@ body {
     margin: 40px auto;
   }
 }
+
+/* ================= GLOSARIO - 3 COLUMNAS ================= */
+.glossary-cards {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .glossary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .glossary-cards {
+    grid-template-columns: 1fr;
+  }
+}
